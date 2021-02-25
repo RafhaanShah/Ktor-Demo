@@ -2,6 +2,7 @@ val logback_version: String by project
 val ktor_version: String by project
 val kotlin_version: String by project
 val serialization_version: String by project
+val koin_version: String by project
 
 plugins {
     application
@@ -18,6 +19,7 @@ application {
 
 repositories {
     mavenLocal()
+    mavenCentral()
     jcenter()
 }
 
@@ -27,9 +29,12 @@ dependencies {
     implementation("io.ktor:ktor-server-core:$ktor_version")
     implementation("io.ktor:ktor-server-netty:$ktor_version")
     implementation("io.ktor:ktor-serialization:$ktor_version")
+    implementation("org.koin:koin-core:$koin_version")
+    implementation("org.koin:koin-ktor:$koin_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
 
     testImplementation("io.ktor:ktor-server-tests:$ktor_version")
+    testImplementation("org.koin:koin-test:$koin_version")
 }
 
 kotlin.sourceSets["main"].kotlin.srcDirs("src")

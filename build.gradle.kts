@@ -28,11 +28,18 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serialization_version")
+
     implementation("io.ktor:ktor-server-core:$ktor_version")
     implementation("io.ktor:ktor-server-netty:$ktor_version")
     implementation("io.ktor:ktor-serialization:$ktor_version")
+    implementation("io.ktor:ktor-client-core:$ktor_version")
+    implementation("io.ktor:ktor-client-cio:$ktor_version")
+    implementation ("io.ktor:ktor-client-serialization:$ktor_version")
+
+
     implementation("org.koin:koin-core:$koin_version")
     implementation("org.koin:koin-ktor:$koin_version")
+
     implementation("ch.qos.logback:logback-classic:$logback_version")
 
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version")
